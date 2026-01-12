@@ -369,3 +369,151 @@ Example response:
 - User data in JSON format  
 
 ---
+
+
+# Q5. Three-Tier Architecture
+
+The **Three-Tier Architecture** is a software design pattern that divides an application into **three separate layers**.  
+Each layer has a specific role and works independently.
+
+This separation:
+- Makes development easier  
+- Improves scalability  
+- Enhances security  
+- Allows independent updates  
+
+---
+
+## 1. Presentation Layer (Client Layer)
+
+This is the **user-facing** part of the application.
+
+### Purpose
+- Display information to users  
+- Collect user inputs  
+
+### Responsibilities
+- Takes user requests  
+- Sends them to the Application Layer  
+- Displays responses received  
+
+### Technologies
+- HTML  
+- CSS  
+- JavaScript  
+- Frameworks:
+  - React  
+  - Angular  
+  - Vue.js  
+
+---
+
+## 2. Application Layer (Business Logic Layer)
+
+This is the **middle layer** and the brain of the system.
+
+### Purpose
+- Process data  
+- Perform calculations  
+- Apply business rules  
+
+### Key Role
+- Acts as a bridge between:
+  - Presentation Layer  
+  - Data Layer  
+- Prevents frontend from directly accessing the database  
+- Improves security  
+
+### Technologies
+- Python  
+- Java  
+- Node.js  
+- PHP  
+
+---
+
+## 3. Data Layer (Database Layer)
+
+This is the **storage layer** of the application.
+
+### Purpose
+- Store data permanently  
+- Keep data updated  
+
+### Responsibilities
+- Retrieve data  
+- Insert new data  
+- Update existing data  
+- Delete unwanted data  
+
+### Technologies
+**Relational Databases**
+- MySQL  
+- PostgreSQL  
+- Oracle  
+
+**NoSQL Databases**
+- MongoDB  
+
+---
+
+# Why Use Three-Tier Architecture?
+
+This architecture is an **industry standard** because of its many advantages.
+
+---
+
+## 1. Scalability
+
+Each layer can be scaled **independently**.
+
+Example:
+- If traffic increases:
+  - Add more web servers to Presentation Layer  
+  - No need to change the database  
+
+This allows:
+- Better performance  
+- Cost efficiency  
+
+---
+
+## 2. Maintainability
+
+Layers are independent:
+- UI changes do not affect backend  
+- Database changes do not affect frontend  
+
+Benefits:
+- Easier debugging  
+- Faster updates  
+- Clean code structure  
+
+---
+
+## 3. Security
+
+- Data Layer is hidden from users  
+- Presentation Layer cannot directly access database  
+- All requests go through Application Layer  
+
+This:
+- Reduces hacking risk  
+- Protects sensitive data  
+
+---
+
+## 4. Flexibility
+
+- Different teams can work on different layers  
+- Each team can use:
+  - Different programming languages  
+  - Different tools  
+
+This:
+- Speeds up development  
+- Improves collaboration  
+
+---
+
+
