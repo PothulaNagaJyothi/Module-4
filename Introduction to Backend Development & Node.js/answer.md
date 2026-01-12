@@ -202,4 +202,88 @@ Controls access levels:
 
 This ensures the system remains safe and reliable.
 
+![alt text](image.png)
+
+
 ---
+
+# Q3. Business Logic
+
+**Business Logic** defines the rules that control how data is:
+- Created  
+- Displayed  
+- Stored  
+- Modified  
+
+It represents the **business goals** and decisions written into the code.  
+If code is not related to:
+- Moving data  
+- Designing UI  
+- Styling buttons  
+
+Then it is most likely **Business Logic**.
+
+Business Logic ensures that everything works the way it *should* according to business requirements.
+
+---
+
+## Real-World Examples
+
+### 1. E-Commerce Pricing Rules
+
+Business rule example:
+
+> If a customer buys **3 items**, the **cheapest item is free**  
+> This offer applies **only to Premium members**
+
+**Logic flow:**
+- Check if user is a Premium member  
+- Check if cart has 3 or more items  
+- Find the cheapest item  
+- Apply discount  
+
+This rule helps:
+- Reward loyal customers  
+- Increase sales  
+- Improve customer satisfaction  
+
+---
+
+### 2. Healthcare Privacy Rules
+
+Healthcare systems must follow strict privacy laws like **HIPAA**.
+
+**Business rules:**
+- Only the **assigned doctor** can access patient records  
+- Patients can access **their own records**  
+- No unauthorized person can view data  
+
+**Purpose:**
+- Protect patient privacy  
+- Follow legal requirements  
+- Prevent data misuse  
+
+---
+
+### 3. Travel Booking (Room Availability)
+
+**Logic sequence:**
+
+1. User selects hotel and dates  
+2. System checks:
+   - Is room available?  
+3. If available:
+   - Hold room for **10 minutes**  
+4. User enters payment details  
+5. If payment succeeds:
+   - Confirm booking  
+6. If timer expires:
+   - Release room for others  
+
+**Benefits:**
+- Prevents double booking  
+- Fair chance for all users  
+- Ensures smooth booking experience  
+
+---
+
