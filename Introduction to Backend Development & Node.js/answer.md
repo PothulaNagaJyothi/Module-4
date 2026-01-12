@@ -233,8 +233,8 @@ Business Logic ensures that everything works the way it *should* according to bu
 
 Business rule example:
 
-> If a customer buys **3 items**, the **cheapest item is free**  
-> This offer applies **only to Premium members**
+If a customer buys **3 items**, the **cheapest item is free**  
+This offer applies **only to Premium members**
 
 **Logic flow:**
 - Check if user is a Premium member  
@@ -356,7 +356,7 @@ This communication follows protocols such as:
 ## Example
 
 ### Request
-> Client: "I want to see the profile page of user #123"
+Client: "I want to see the profile page of user #123"
 
 ### Response
 Server actions:
