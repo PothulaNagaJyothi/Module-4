@@ -1,4 +1,4 @@
-# 1.Q Frontend Development
+# Q1. Frontend Development
 
 The **Frontend** is what people see and use when they visit a website. It includes everything a user sees, touches, and experiences when they open a web application in a browser. The frontend acts as a bridge between the user and the underlying logic of the application.
 
@@ -106,3 +106,100 @@ This ensures smooth interaction and better usability.
 ---
 
 
+# Q2. Role of Backend (BE)
+
+The **Backend** is the behind-the-scenes part of a website that users do not see.  
+It is responsible for:
+- Storing data  
+- Processing user requests  
+- Maintaining security  
+- Keeping the system running smoothly  
+
+The backend does most of the heavy work required to keep a website functional and secure.
+
+---
+
+## 1. Server-Side Processing
+
+The backend is like the **brain** of the application.  
+It performs tasks that browsers cannot handle efficiently.
+
+### Request Handling
+- The backend receives messages (requests) from the frontend.
+- It understands what the user wants.
+- Processes the request.
+- Sends the correct response back.
+
+This ensures users get the expected results.
+
+### Heavy Computation
+Some tasks require high processing power:
+- Video processing
+- Mortgage calculations
+- Large data analysis  
+
+These tasks are handled by the **server** so:
+- User devices remain fast
+- Performance stays smooth
+
+---
+
+## 2. Database Handling
+
+The backend works as a **guardian** for all stored information.  
+It ensures data is:
+- Safe
+- Organized
+- Easy to access
+
+### Data Management
+Uses database systems such as:
+- MySQL  
+- PostgreSQL  
+- MongoDB  
+
+Stores:
+- User profiles
+- Product catalogs
+- Message histories
+
+These systems help manage and organize all information properly.
+
+### CRUD Operations
+
+Backend performs four main operations:
+
+- **Create** – Save new data  
+- **Read** – Fetch existing data  
+- **Update** – Modify stored data  
+- **Delete** – Remove unnecessary data  
+
+These are called **CRUD operations** and are essential for data management.
+
+---
+
+## 3. Security and Authentication
+
+The backend is the **first line of defense** for a web application.
+
+### Authentication
+- Verifies user identity using login credentials.
+- Provides:
+  - Session  
+  - Token (JWT)  
+- Keeps users securely logged in.
+
+### Authorization
+Controls access levels:
+- Prevents normal users from accessing admin dashboards.
+- Restricts users from viewing other users’ data.
+
+### Data Integrity
+- Validates all incoming data.
+- Protects against attacks like:
+  - SQL Injection  
+  - Cross-Site Scripting (XSS)
+
+This ensures the system remains safe and reliable.
+
+---
