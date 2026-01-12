@@ -287,3 +287,85 @@ Healthcare systems must follow strict privacy laws like **HIPAA**.
 
 ---
 
+# Q4. Client–Server Model
+
+The internet is built on the **Client–Server model**.  
+This model defines how computers communicate with each other over a network.
+
+It is based on **task sharing**:
+- **Clients** request services  
+- **Servers** provide services  
+
+This architecture is the foundation of how websites and applications work.
+
+---
+
+## Client
+
+The **Client** is the one that makes requests.
+
+Examples:
+- Web browsers (Chrome, Firefox, Edge)
+- Mobile applications
+
+### Client Responsibilities
+- Displays information to the user  
+- Sends requests to the server when needed  
+
+The client helps users:
+- View web pages  
+- Submit forms  
+- Interact with content  
+
+---
+
+## Server
+
+The **Server** is a powerful computer or cloud service.
+
+### Server Responsibilities
+- Stores:
+  - Website files  
+  - Databases  
+- Processes requests  
+- Sends responses  
+
+The server:
+- Runs **24/7**
+- Waits for client requests  
+- Handles multiple users at once  
+
+---
+
+## Communication: Request–Response Cycle
+
+Clients and servers communicate using a **Request–Response cycle**.
+
+### How it works:
+
+1. Client sends a **request**
+2. Server processes the request
+3. Server sends a **response**
+
+This communication follows protocols such as:
+- **HTTP**
+- **HTTPS**
+
+---
+
+## Example
+
+### Request
+> Client: "I want to see the profile page of user #123"
+
+### Response
+Server actions:
+- Searches for user #123  
+- Fetches data from database  
+- Sends response back  
+
+Example response:
+- Status code: **200 OK**
+- User data in JSON format  
+
+---
