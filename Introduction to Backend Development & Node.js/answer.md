@@ -516,4 +516,118 @@ This:
 
 ---
 
+# Q6. JavaScript as a Backend Language
+
+Earlier, JavaScript was used only in the browser.  
+With the introduction of **Node.js**, JavaScript can now run on servers as well.  
+This change made JavaScript one of the most popular backend languages in the world.
+
+---
+
+## 1. Performance (Non-Blocking I/O)
+
+JavaScript uses an **event-driven** and **non-blocking I/O** model.
+
+### Key Features
+
+- Can handle multiple tasks at the same time  
+- Does not wait for one task to finish before starting another  
+- This is called **Asynchronous Processing**
+
+### How It Works
+
+- JavaScript starts a task (like a database call)
+- Moves on to the next task immediately
+- Comes back when the result is ready
+
+This makes JavaScript:
+- Fast  
+- Efficient  
+- Scalable  
+
+### V8 Engine
+
+Node.js is built on Google’s **V8 Engine**:
+- Converts JavaScript directly into machine code  
+- Makes execution very fast  
+
+### Efficiency
+
+Best suited for:
+- Chat applications  
+- Streaming services  
+- Real-time collaboration tools (e.g., Google Docs)
+
+---
+
+## 2. Ecosystem (NPM and Full-Stack)
+
+JavaScript has a powerful **ecosystem** of tools and libraries.
+
+### NPM (Node Package Manager)
+
+- Contains **2+ million packages**
+- Ready-made solutions for:
+  - File uploads  
+  - Database connections  
+  - Password encryption  
+  - Authentication  
+
+Developers can easily reuse existing code instead of building everything from scratch.
+
+### Universal Language (Full-Stack)
+
+JavaScript works on:
+- Frontend  
+- Backend  
+
+Benefits:
+- Same language everywhere  
+- Code reuse (validation logic)  
+- Faster development  
+- Fewer bugs  
+
+This enables **Full-Stack Development** using only JavaScript.
+
+### Community Support
+
+- Used by millions of developers  
+- Large community  
+- Easy to find help on:
+  - Stack Overflow  
+  - GitHub  
+  - Blogs & forums  
+
+---
+
+## 3. Popular Backend Frameworks
+
+Frameworks help developers:
+- Build faster  
+- Follow best practices  
+- Reduce boilerplate code  
+
+### Express.js
+- Most popular Node.js framework  
+- Lightweight & flexible  
+- Used for:
+  - APIs  
+  - Web apps  
+- Gives developers full control  
+
+### NestJS
+- Uses **TypeScript**  
+- Enterprise-grade framework  
+- Best for:
+  - Large-scale applications  
+  - Maintainable code  
+- Structured and opinionated  
+
+### Fastify
+- High performance  
+- Low overhead  
+- Best for:
+  - Speed-critical applications  
+
+---
 
