@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "8d436981-bd93-4361-8e2c-413bcd469620",
+      "name": "Jyothi",
+      "email": "jyothi@gmail.com",
+      "password": "secret123"
+    },
+    {
+      "id": "03554fba-84d0-4682-ac23-75b3bf7da8ad",
+      "name": "Arjun",
+      "email": "arjun@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": "2f33c8e4-f9b8-4e73-b31b-e2ba1c69dbac",
+      "name": "Parvati",
+      "email": "parvati@gmail.com",
+      "password": "password897"
+    }
+  ]
+}
