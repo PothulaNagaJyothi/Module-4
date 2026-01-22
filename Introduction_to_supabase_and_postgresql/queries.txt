@@ -1,0 +1,77 @@
+
+SQL CRUD Operations (Hands-On)
+
+Step 1 : Create a table.
+
+Query : create table students (id SERIAL PRIMARY KEY, name TEXT NOT NULL,email TEXT UNIQUE,age INTEGER,course TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+Output :  Success. No rows returned
+
+Step 2 : Insert the Data 
+
+Query : 
+INSERT INTO students (name,email,age,course) VALUES 
+('Jyothi','jyothi2@gmail.com',21,'CSE'),
+('Hema','hema3@gmail.com',20,'EEE'),
+('Sai','sai10@gmail.com',25,'CSE'),
+('Riya','riya40@gmail.com',22,'ECE'),
+('Arjun','arjun35@gmail.com',23,'Mech'),
+('Reena','reena2@gmail.com',20,'Civil'),
+('Padma','padma7@gmail.com',21,'CSE');
+
+Output : Success. No rows returned
+
+
+Step 3 : Read the data 
+
+1) Fetch all students
+
+Query : select * from students;
+
+Output : select all students output.png
+
+2) Fetch students older than 20
+
+Query  : select * from students where age>20;
+
+Output : select students where age is above 20 result.png
+
+3) Fetch only name and email columns
+
+Query : select name,email from students;
+
+Output : select name and email of students result.png
+
+4) Fetch students enrolled in a specific course
+
+Query :select * from students where course='CSE';
+
+Output : select students where course is same result.png
+
+Step 4 : Update the data 
+
+1) Update the age of one student
+
+Query : update students set age=20 where id=1;
+
+Result : Success. No rows returned
+
+2) Update the course for all students enrolled in one course
+
+Query : update students set course='Computer Science' where course='CSE';
+
+Result : Success. No rows returned
+
+Step 5 : Delete the data 
+
+1) Delete one student using id
+
+Query : delete from students where id=3;
+
+Result : Success. No rows returned
+
+2) Delete all students below a certain age
+
+Query : delete from students where age<21;
+
+Result : Success. No rows returned
