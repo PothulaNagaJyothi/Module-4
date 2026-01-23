@@ -1,0 +1,142 @@
+Advanced SQL Functions on a Single Table
+
+Step 2 : Aggregate Queries
+1)Count the total number of students
+Query : select count(*) as total_students from students;
+
+Result :
+         +--------------------+
+         | total_students     |
+         +--------------------+
+         |       3            |
+         +--------------------+
+
+2) Find the average age of students
+Query : select avg(age) as average_age from students;
+
+Result :
+         +-------------------+
+         |  average_age      |
+         +-------------------+
+         | 22.00000000000    |
+         +-------------------+
+
+3) Find the minimum and maximum age
+
+Query : select max(age) as max_age , min(age) as min_age from students;
+
+Result : 
+        +--------------------------------------+
+        |   max_age         |    mi_age        |
+        +--------------------------------------+
+        |   23              |     21           |
+        +--------------------------------------+
+
+4) Count how many students are enrolled in each course
+
+Query : select course, count(*) AS student_count from students GROUP BY course;
+
+Result : 
+         +---------------------------------------+
+         | course           |  student_count     |
+         +---------------------------------------+
+         |  Computer Science |    1              |
+         +---------------------------------------+
+         |   ECE             |     1             |
+         +---------------------------------------+
+         |   Mech            |      1            |
+         +---------------------------------------+
+
+5) Count students whose age is greater than 20
+
+Query : select count(*) as  students_over_20 from students where age>20;
+
+Result : 
+         +----------------------+
+         |  students_over_20    |
+         +----------------------+
+         |         3            |
+         +----------------------+
+
+Step 3: Grouping & Filtering  
+
+1)Display course-wise student count
+
+Query : select course,count(*) as student_count from students group by course;
+
+Result : 
+        +-----------------------------+
+        | course      | student_count |
+        +-----------------------------+
+        | Computer Science |   1      |
+        +-----------------------------+
+        |   ECE            |    1     |
+        +-----------------------------+
+        |  Mech            |    1     |
+        +-----------------------------+
+
+2)Display only courses where student count is greater than 1
+
+Query : select course, count(*) as student_count from students group by course having count(*) > 1;
+
+Result :  success. No rows returned
+
+3) Display courses sorted by highest student count first
+
+Query :  select course, count(*) as student_count from students group by course order by student_count desc;
+
+Result :  
+        +-----------------------------+
+        | course      | student_count |
+        +-----------------------------+
+        | Computer Science |   1      |
+        +-----------------------------+
+        |   ECE            |    1     |
+        +-----------------------------+
+        |  Mech            |    1     |
+        +-----------------------------+
+
+Step 4: Ordering & Limiting
+
+1) Fetch the latest 3 students based on created_at
+
+Query : select * from students order by created_at desc LIMIT 3;
+
+Result :
+         +----------------------------------------------------------------------------------------+
+         | id | name  | email              | age  | course         |  created_at                  |
+         +----------------------------------------------------------------------------------------+
+         | 4  | Riya  | riya@gmail.com     | 22   | ECE            |  2026-01-22 14:36:20.746105  |
+         +----------------------------------------------------------------------------------------+
+         | 5  | Arjun | arjun@gmail.com    | 23   | Mech           |  2026-01-22 14:36:20.746105  |
+         +----------------------------------------------------------------------------------------+
+         | 7  | Padma | padma@gmail.com    | 21   | Computer Science | 2026-01-22 14:36:20.746105 |
+         +----------------------------------------------------------------------------------------+
+
+2) Fetch the top 5 oldest students
+
+Query : select * from students order by age desc LIMIT 5;
+
+Result :
+         +----------------------------------------------------------------------------------------+
+         | id | name  | email              | age  | course         |  created_at                  |
+         +----------------------------------------------------------------------------------------+
+         | 5  | Arjun | arjun@gmail.com    | 23   | Mech           |  2026-01-22 14:36:20.746105  |
+         +----------------------------------------------------------------------------------------+
+         | 4  | Riya  | riya@gmail.com     | 22   | ECE            |  2026-01-22 14:36:20.746105  |
+         +----------------------------------------------------------------------------------------+
+         | 7  | Padma | padma@gmail.com    | 21   | Computer Science | 2026-01-22 14:36:20.746105 |
+         +----------------------------------------------------------------------------------------+
+
+
+3) Fetch students enrolled in a specific course, sorted by age (descending)
+
+Query : select * from students where course = 'Mech' order by age desc;
+
+Result :
+         +----------------------------------------------------------------------------------------+
+         | id | name  | email              | age  | course         |  created_at                  |
+         +----------------------------------------------------------------------------------------+
+         | 5  | Arjun | arjun@gmail.com    | 23   | Mech           |  2026-01-22 14:36:20.746105  |
+         +----------------------------------------------------------------------------------------+
+          
