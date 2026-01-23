@@ -21,7 +21,7 @@ This structure ensures data integrity, reduces redundancy, and makes queries mor
 **Diagram:**
 ```text
 User (PK: user_id) ──── 1:1 ──── Account_Settings (FK: user_id)
-
+```
 ---
 
 ### 2. One-to-Many (1:N)
@@ -35,7 +35,7 @@ User (PK: user_id) ──── 1:1 ──── Account_Settings (FK: user_id)
 Customer (PK: customer_id)
    │
    └───< Order (FK: customer_id)
-
+```
 ---
 
 ### 3. Many-to-Many (N:M)
@@ -47,7 +47,7 @@ Customer (PK: customer_id)
 **Diagram:**
 ```text 
 Order (PK: order_id) ───< Order_Items (FK: order_id, product_id) >─── Product (PK: product_id)
-
+```
 ---
 
 
