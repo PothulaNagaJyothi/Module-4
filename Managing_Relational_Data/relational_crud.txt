@@ -1,0 +1,187 @@
+SQL CRUD Operations on Relationships
+
+Step 1 : Create Tables with Relationships
+1) Users Table
+Query : CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Result : Success. No rows returned
+
+2) Orders Table
+Query : CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    amount INTEGER NOT NULL,
+    status TEXT DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Result : Success. No rows returned
+
+Step 2 : Insert Data
+
+1) Insert at least 5 users
+
+Query : INSERT INTO users (name, email) VALUES
+('John', 'john@example.com'),
+('Smith', 'smith@example.com'),
+('Charlie', 'charlie@example.com'),
+('Prince', 'prince@example.com'),
+('Elon', 'elon@example.com');
+
+Result : Success. No rows returned
+
+2) Insert at least 8–10 orders
+
+Query : INSERT INTO orders (user_id, amount, status) VALUES
+(1, 150, 'completed'), (1, 45, 'pending'), (1, 80, 'shipped'),
+(2, 200, 'completed'), (2, 20, 'cancelled'),
+(3, 300, 'shipped'), (3, 120, 'completed'),
+(4, 55, 'pending'), (4, 95, 'completed'),
+(5, 500, 'completed');
+
+Result : Success. No rows returned
+
+Step 3: Read Data (Relational Reads)
+
+1) Fetch all users
+
+Query : select * from users;
+
+Result :
+
+| id | name    | email               | created_at                 |
+| -- | ------- | ------------------- | -------------------------- |
+| 1  | John    | john@example.com    | 2026-01-26 14:11:34.102295 |
+| 2  | Smith   | smith@example.com   | 2026-01-26 14:11:34.102295 |
+| 3  | Charlie | charlie@example.com | 2026-01-26 14:11:34.102295 |
+| 4  | Prince  | prince@example.com  | 2026-01-26 14:11:34.102295 |
+| 5  | Elon    | elon@example.com    | 2026-01-26 14:11:34.102295 |
+
+2) Fetch all orders
+
+Query : select * from orders;
+
+Result :
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 150    | completed | 2026-01-26 14:11:43.716612 |
+| 2  | 1       | 45     | pending   | 2026-01-26 14:11:43.716612 |
+| 3  | 1       | 80     | shipped   | 2026-01-26 14:11:43.716612 |
+| 4  | 2       | 200    | completed | 2026-01-26 14:11:43.716612 |
+| 5  | 2       | 20     | cancelled | 2026-01-26 14:11:43.716612 |
+| 6  | 3       | 300    | shipped   | 2026-01-26 14:11:43.716612 |
+| 7  | 3       | 120    | completed | 2026-01-26 14:11:43.716612 |
+| 8  | 4       | 55     | pending   | 2026-01-26 14:11:43.716612 |
+| 9  | 4       | 95     | completed | 2026-01-26 14:11:43.716612 |
+| 10 | 5       | 500    | completed | 2026-01-26 14:11:43.716612 |
+
+3)Fetch all orders for a specific user
+
+Query : select * from orders where user_id=1;
+
+Result :
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 150    | completed | 2026-01-26 14:11:43.716612 |
+| 2  | 1       | 45     | pending   | 2026-01-26 14:11:43.716612 |
+| 3  | 1       | 80     | shipped   | 2026-01-26 14:11:43.716612 |
+
+4) Fetch users who have more than one order
+
+Query : SELECT users.name, COUNT(orders.id) AS order_count
+FROM users
+JOIN orders ON users.id = orders.user_id
+GROUP BY users.id
+HAVING COUNT(orders.id) > 1;
+
+Result : 
+
+| name    | order_count |
+| ------- | ----------- |
+| Prince  | 2           |
+| Smith   | 2           |
+| Charlie | 2           |
+| John    | 3           |
+
+5) Fetch total order amount per user
+
+Query : SELECT users.name, SUM(orders.amount) AS total_spent
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+GROUP BY users.id;
+
+Result :
+
+| name    | total_spent |
+| ------- | ----------- |
+| Prince  | 150         |
+| Smith   | 220         |
+| Charlie | 420         |
+| Elon    | 500         |
+| John    | 275         |
+
+
+Step 4: Update Data
+
+1) Update the email of one user
+
+Query : update users set email='john21@gmail.com' where id=1;
+
+Result : Success. No rows returned
+
+2) Update the status of all orders for a specific user
+
+Query :update orders set status = 'shipped' where user_id = 2;
+
+Result :Success. No rows returned
+
+3) Update order amount for a single order
+
+Query : update orders set amount = 550 where id = 10;
+
+Result :Success. No rows returned
+
+
+Step 5: Delete Data
+
+1) Delete one order using order id
+
+Query : delete from orders where id = 5;
+
+Result : Success. No rows returned
+
+2) Delete all orders of a specific user
+
+Query : delete from orders where user_id = 4;
+
+Result : Success. No rows returned
+
+3) Attempt deleting a user with existing orders and observe the behavior.
+
+Query : delete from users where id = 3;
+
+Result : Success. No rows returned
+
+
+Step 6: Conceptual Question (Short Answer)
+
+/*
+-- Why should orders not be stored inside the users table?
+
+1. Data Redundancy: Repeating user info (name, email) for every order wastes space.
+2. Data Integrity: If a user changes their name, we'd have to update dozens of rows.
+3. Atomicity: Databases prefer one value per cell. Storing a list of orders in 
+   one "orders" column in the users table makes filtering and math (like SUM) 
+   extremely difficult and inefficient.
+*/
+
+
+
+
